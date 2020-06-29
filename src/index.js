@@ -7,7 +7,7 @@ const authRoutes = require('./routes/authRoutes');
 
 
 const app = express();
-
+// supposedly new version of node doesn't require parser
 
 app.use(bodyParser.json());
 // parser must be before use auth routes 
