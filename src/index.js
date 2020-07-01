@@ -1,11 +1,9 @@
 require('./models/user');
-
 const express = require('express');
 const mongoose = require('mongoose');
-const requireAuth = require('./middlewares/requireAuth');
 const bodyParser = require('body-parser');
 const authRoutes = require('./routes/authRoutes');
-
+const requireAuth = require('./middlewares/requireAuth');
 
 const app = express();
 // supposedly new version of node doesn't require parser
