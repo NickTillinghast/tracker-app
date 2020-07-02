@@ -1,8 +1,10 @@
-require('./models/user');
+require('./models/User');
+require('./models/Track');
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const authRoutes = require('./routes/authRoutes');
+const trackRoutes = require('./routes/trackroutes');
 const requireAuth = require('./middlewares/requireAuth');
 
 const app = express();
@@ -12,6 +14,7 @@ app.use(bodyParser.json());
 // parser must be before use auth routes 
 
 app.use(authRoutes);
+app.use(trackRoutes);
 
 const mongoUri = 'mongodb+srv://NickTillinghast:kinley082314@cluster0-hfig5.mongodb.net/<dbname>?retryWrites=true&w=majority';
 mongoose.connect(mongoUri, {
